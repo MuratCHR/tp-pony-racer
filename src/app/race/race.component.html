@@ -1,0 +1,18 @@
+<form>
+    <label for="name">Race Name:</label>
+    <input type="text" id="name" name="name" [(ngModel)]="raceName">
+    <br><br>
+    <label for="location">Race Location:</label>
+    <input type="text" id="location" name="location" [(ngModel)]="raceLocation">
+    <br>
+    <button (click)="createRace(raceName, raceLocation)">Create Race</button>
+    <br><br>
+    
+  </form>
+  <ul>
+    <li *ngFor="let race of races">
+      {{ race.name }} - {{ race.location }}
+      <button (click)="deleteRace(race)">Delete</button>
+    </li>
+  </ul>
+  <button (click)="logout()">Logout</button> 
